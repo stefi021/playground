@@ -20,6 +20,15 @@ Servo::Servo(pinStruct_t &servoPin,
 
 	/* TIM config */
 
+	/* System clock by default is 16MHz
+	 * 1 tick freq = 16MHz / (1 + prescaler) = 1.6MHz
+	 * 1 tick time = 1 / 1.6 MHz = 0.626 us
+	 * PWM period = 32000 x 0.625 us = 20 ms -> freq = 50 Hz
+	 * right position 1200 × 0.625 µs = 750 µs ≈ 0.75 ms
+	 * mid position 2250 × 0.625 µs = 1406 µs ≈ 1.4 ms
+	 * left position 3350 × 0.625 µs = 2094 µs ≈ 2.1 ms
+	 * */
+
 	TIM_OC_InitTypeDef sConfigOC = {0};
 	htim.Instance = TIMx;
 	htim.Init.Prescaler = 10 - 1;

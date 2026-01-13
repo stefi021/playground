@@ -1,2 +1,0 @@
-../Core/Src/main.cpp:3:5:int main()	3
-../Core/Src/main.cpp:26:17:void SysTick_Handler()	1

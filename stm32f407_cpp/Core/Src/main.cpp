@@ -17,6 +17,8 @@ int main(void) {
 		HAL_Delay(1000);
 		servo.TurnShaft(SERVO_RIGHTPOSITION);
 		HAL_Delay(1000);
+		servo.TurnShaft(SERVO_MIDPOSITION);
+		HAL_Delay(1000);
 	}
 
 	return 0;

@@ -1,0 +1,20 @@
+# STM32CubeIDE build output
+Debug/
+Release/
+
+# Eclipse / STM32CubeIDE settings
+.settings/
+.project
+.cproject
+
+# Generated binaries
+*.o
+*.d
+*.elf
+*.map
+*.list
+*.su
+*.cyclo
+
+# Launch configs
+*.launch
