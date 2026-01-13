@@ -1,5 +1,7 @@
-Core/Src/stm32f4xx_hal_msp.o: ../Core/Src/stm32f4xx_hal_msp.c \
- ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+custom_drivers/Src/servo.o: ../custom_drivers/Src/servo.cpp \
+ C:/Users/taps/STM32CubeIDE/workspace_1.16.0/playground/stm32f407_cpp/custom_drivers/Inc/servo.h \
+ C:/Users/taps/STM32CubeIDE/workspace_1.16.0/playground/stm32f407_cpp/custom_drivers/Inc/pinmap.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -26,7 +28,8 @@ Core/Src/stm32f4xx_hal_msp.o: ../Core/Src/stm32f4xx_hal_msp.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-../Core/Inc/main.h:
+C:/Users/taps/STM32CubeIDE/workspace_1.16.0/playground/stm32f407_cpp/custom_drivers/Inc/servo.h:
+C:/Users/taps/STM32CubeIDE/workspace_1.16.0/playground/stm32f407_cpp/custom_drivers/Inc/pinmap.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
