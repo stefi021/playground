@@ -1,19 +1,58 @@
 #include "servo.h"
 #include "hc05.h"
 #include "lcd.h"
+#include "keypad.h"
 
 char bluetoothData = '\0';
+char pressedKey = '\0';
+char arr[5] = {0};
 
 void servoApplication(void);
 void lcdApplication(void);
+void keyPadApplication(void);
 
 int main(void) {
 
 	HAL_Init();
-	lcdApplication();
+	keyPadApplication();
 	return 0;
 }
 
+void keyPadApplication(void) {
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_GPIOB_CLK_ENABLE();
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+
+	pinStruct_t rowPins[NUMBER_OF_ROWS] =
+	{
+		{GPIOC,GPIO_PIN_6},
+		{GPIOA,GPIO_PIN_6},
+		{GPIOA,GPIO_PIN_7},
+		{GPIOB,GPIO_PIN_6}
+	};
+
+	pinStruct_t columnPins[NUMBER_OF_COLUMNS] =
+	{
+		{GPIOA,GPIO_PIN_0},
+		{GPIOA,GPIO_PIN_1},
+		{GPIOA,GPIO_PIN_4},
+		{GPIOB,GPIO_PIN_0}
+	};
+
+	static Keypad keypad(rowPins,columnPins);
+	uint8_t i = 0;
+
+	while(1)
+	{
+		pressedKey = keypad.GetCharShortPress();
+		if(pressedKey != '\0')
+		{
+			arr[i%4] = pressedKey;
+			i++;
+		}
+	}
+}
 void lcdApplication(void) {
 
 	__HAL_RCC_GPIOC_CLK_ENABLE();
